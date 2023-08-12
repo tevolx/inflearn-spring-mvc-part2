@@ -1,1 +1,3 @@
-rootProject.name = 'thymeleaf-basic'
+//rootProject.name = 'thymeleaf-basic'
+
+include("section1")
