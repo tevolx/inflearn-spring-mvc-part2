@@ -1,34 +1,47 @@
+/**
+ * Gradle plugin
+ * 1. automating common build tasks,
+ * 2. integrating with external tools or services,
+ * 3. tailoring the build process to meet specific project needs
+ **/
 plugins {
+	/**
+	 * [Java plugin]
+	 * A task for building an executable jar is automatically configured
+	 **/
 	id 'java'
-	id 'org.springframework.boot' version '2.7.14'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	/**
+	 * [Spring boot gradle plugin]
+	 * 1. allows to package executable jar or war archives
+	 * 2. run spring application,
+	 * 3. use the dependency management by spring-boot dependency
+	 **/
+	id 'org.springframework.boot' version '2.7.14' apply false
+	/**
+	 * [Spring dependency management plugin]
+	 * 1. Provides maven like dependency management
+	 * 2. Provides DSL to configure dependency management directly and by importing existing maven bom
+	 * (BOM => pom.xml 파일에 기재하는 다양한 dependency에 대한 버전 정보를 들고 있는 파일)
+	 **/
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE' apply false
 }
 
-group = 'hello'
-version = '0.0.1-SNAPSHOT'
-
+// Java version
 java {
 	sourceCompatibility = '11'
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+// Configures this project and each of sub projects
+allprojects {
+	group = 'hello'
+	version = '0.0.1-SNAPSHOT'
+}
+
+// Configures subproject of this project
+subprojects {
+	// where to download dependency
+	repositories {
+		mavenCentral() // public repository
+		// mavenLocal() // private repository
 	}
-}
-
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
 }
