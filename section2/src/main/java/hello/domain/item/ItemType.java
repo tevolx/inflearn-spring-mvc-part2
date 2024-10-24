@@ -1,4 +1,4 @@
-package hello.itemservice.domain.item;
+package hello.domain.item;
 
 public enum ItemType {
 
