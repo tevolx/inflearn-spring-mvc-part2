@@ -1,7 +1,7 @@
-package hello.itemservice.web.message;
+package hello.chapter3.web.message;
 
-import hello.itemservice.domain.item.Item;
-import hello.itemservice.domain.item.ItemRepository;
+import hello.chapter3.domain.item.Item;
+import hello.chapter3.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
