@@ -17,6 +17,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// ScriptAssert 사용 오류 => JDK 14 이후부터 JS엔진으로 Nashorn 대신 GraalVM 사용하게 되면서 발생. Nashorn은 JS 스크립팅을 지원하지만 GraalVM은 JS를 기본적으로 미지원
+	implementation 'org.openjdk.nashorn:nashorn-core:15.3'
 
 	compileOnly 'org.projectlombok:lombok'
 
