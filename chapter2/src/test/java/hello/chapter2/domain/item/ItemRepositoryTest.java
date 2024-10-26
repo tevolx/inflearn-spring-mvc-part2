@@ -1,4 +1,4 @@
-package hello.domain.item;
+package hello.chapter2.domain.item;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

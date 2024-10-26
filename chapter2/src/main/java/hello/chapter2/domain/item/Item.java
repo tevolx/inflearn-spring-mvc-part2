@@ -1,4 +1,4 @@
-package hello.domain.item;
+package hello.chapter2.domain.item;
 
 import lombok.Data;
 

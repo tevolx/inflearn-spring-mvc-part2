@@ -1,9 +1,9 @@
-package hello.web.form;
+package hello.chapter2.web.form;
 
-import hello.domain.item.DeliveryCode;
-import hello.domain.item.Item;
-import hello.domain.item.ItemRepository;
-import hello.domain.item.ItemType;
+import hello.chapter2.domain.item.DeliveryCode;
+import hello.chapter2.domain.item.Item;
+import hello.chapter2.domain.item.ItemRepository;
+import hello.chapter2.domain.item.ItemType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

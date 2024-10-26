@@ -1,7 +1,7 @@
-package hello;
+package hello.chapter2;
 
-import hello.domain.item.Item;
-import hello.domain.item.ItemRepository;
+import hello.chapter2.domain.item.Item;
+import hello.chapter2.domain.item.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

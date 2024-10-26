@@ -1,4 +1,4 @@
 //rootProject.name = 'thymeleaf-basic'
 
-include("chapter1", "section3", "section4", "section5-6", "section7-8", "section9-10", "section11")
+include("chapter1", "chapter2", "section4", "section5-6", "section7-8", "section9-10", "section11")
 
