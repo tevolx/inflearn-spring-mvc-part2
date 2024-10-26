@@ -4,12 +4,21 @@ plugins {
 	id 'io.spring.dependency-management'
 }
 
+
+// Dependency configuration(아래 compileOnly, runtimeOnly 등) 에 대한 정의
 configurations {
 	compileOnly {
-		extendsFrom annotationProcessor
+		extendsFrom annotationProcessor // compileOnly configuration 에서 annotationProcessor 에 정의된 의존성에 대한 내용 사용 가능
 	}
 }
 
+/**
+ * compileOnly: 컴파일 타임에만 의존성을 주입한다.
+ * runtimeOnly: 런타임에만 의존성을 주입한다. (deprecated: runtime)
+ * implementation: 컴파일 타임과 런타임에 모두 쓰이는 의존성을 주입한다. (deprecated: compile)
+ * annotationProcessor: 어노테이션 프로세서로써 컴파일 시 사용되는 의존성을 주입한다.
+ * testImplementation: 테스트 시에만 의존성을 주입한다. (deprecated: testCompile)
+ */
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -21,7 +30,13 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+// test 라는 이름의 task 추가하고 해당 task 는 JUnitPlatform 사용
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// 위 내용과 동일
+//test {
+//	useJUnitPlatform()
+//}
 
